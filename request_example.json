@@ -1,0 +1,26 @@
+{
+    'responseId': '41966af7-b15d-408b-98c3-58e250dd8e32',
+    'queryResult': {
+        'queryText': 'Hello',
+        'action': 'ac_hello',
+        'parameters': {
+            'ibi_hello': 'hello'
+        },
+        'allRequiredParamsPresent': True,
+        'fulfillmentMessages': [{
+            'text': {
+                'text': ['']
+            }
+        }],
+        'intent': {
+            'name': 'projects/ibi-chatbot-8abd6/agent/intents/4ed76c67-e409-4c8d-af38-5a5aafc66166',
+            'displayName': 'ask_hello'
+        },
+        'intentDetectionConfidence': 1.0,
+        'languageCode': 'pt-br'
+    },
+    'originalDetectIntentRequest': {
+        'payload': {}
+    },
+    'session': 'projects/ibi-chatbot-8abd6/agent/sessions/ea65b75b-e9fd-978d-26b3-e683b62c9e62'
+}

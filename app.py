@@ -1,15 +1,28 @@
-from flask import Flask, request, jsonify, render_template
 import os
-import dialogflow
 import requests
 import json
+import dialogflow
+from actions import Actions
+
+from flask import Flask, request, jsonify, render_template
+
 
 app = Flask(__name__)
 
-@app.route('/webhook', methods=['GET','POST'])
-def get_movie_detail():
-    data = request.get_json(silent=True)
-    response =  'success!'
+@app.route('/', methods=['GET','POST'])
+def webhook():
+
+    req = request.get_json(silent=True, force=True)
+    json_action = req.get('queryResult').get('action')
+
+    print('---req %s' % req)
+    print('---json_action %s' % json_action)
+
+    action = Actions()
+
+    response = getattr(action, json_action)(req)
+
+    #response =  'success!'
     reply = {
         "fulfillmentText": response,
     }

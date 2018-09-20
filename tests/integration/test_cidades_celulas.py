@@ -3,19 +3,23 @@ import unittest
 import json
 
 
-class CidadesCelulasTest(unittest.TestCase):
+class CityCellsTest(unittest.TestCase):
+    """
+    Test integration in ask Cells location dialogs
+    """
 
     def setUp(self):
         self.app = app.test_client()
         self.app.testing = True
 
-        _json_data = open('tests/request_celula_barra.json').read()
-        self.barra_payload = json.loads(_json_data)
+        with open('tests/request_celula_barra.json') as _json_data:
+            self.barra_payload = json.loads(_json_data.read())
 
-        _json_data = open('tests/request_celula_guaiba_bairros.json').read()
-        self.guaiba_payload = json.loads(_json_data)
+        with open('tests/request_celula_guaiba_bairros.json') as _json_data:
+            self.guaiba_payload = json.loads(_json_data.read())
 
     def test_post_barra(self):
+        """Test a ask about barra cells"""
 
         _payload = self.barra_payload
 
@@ -25,6 +29,7 @@ class CidadesCelulasTest(unittest.TestCase):
         self.assertEqual(result.status_code, 200)
 
     def test_post_guaiba_bairros(self):
+        """Test a ask about guaiba cells"""
 
         _payload = self.guaiba_payload
 

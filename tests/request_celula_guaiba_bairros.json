@@ -2,7 +2,7 @@
     "responseId": "84e5c53c-bd9b-4611-aa1f-ace89ab9bfc8",
     "queryResult": {
         "queryText": "Jardim dos Lagos",
-        "action": "ask_celulas_ask_celulas_cidades",
+        "action": "ask_cells_cities",
         "parameters": {
             "ibi_bairros": "Jardim dos Lagos",
             "ibi_cidades": "Guaiba"

@@ -1,8 +1,8 @@
 {
-    "celulas" : {
-        "cidades" : {
+    "cells" : {
+        "cities" : {
             "guaiba" : {
-                "bairros" : {
+                "districts" : {
                     "jardim dos lagos" : 
                         [
                         "Rua 1, 43",

@@ -1,20 +1,21 @@
-from .cidades import Cidades
+from .city import City
 
 
 class Actions(object):
+    """Handle the intents resposes by action names """
 
     def ac_hello(self, request):
 
         return 'Hello response'
 
-    def ask_celulas_ask_celulas_cidades(self, params):
+    def ask_cells_cities(self, params):
 
-        _action_class = Cidades()
+        _action_class = City()
 
-        if ('ibi_cidade' in params) and ('ibi_bairros' in params):
-            _cidade = params['ibi_cidades'].lower()
-            _bairro = params['ibi_bairros'].lower()
+        if ('ibi_cities' in params) and ('ibi_districts' in params):
+            _city = params['ibi_cities'].lower()
+            _district = params['ibi_districts'].lower()
 
-            return getattr(_action_class, _cidade)(_bairro)
+            return getattr(_action_class, _city)(_district)
         else:
             return getattr(_action_class, 'guaiba')('centro')

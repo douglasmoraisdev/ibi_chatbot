@@ -11,6 +11,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def webhook():
+    """Main entry endpoint of the webhook"""
 
     _req = request.get_json(silent=True, force=True)
     _json_action = _req.get('queryResult').get('action')

@@ -2,7 +2,7 @@
     "responseId": "e31e5c40-6ffc-4338-82ba-9be7a35e0d45",
     "queryResult": {
         "queryText": "Barra do Ribeiro",
-        "action": "ask_celulas_ask_celulas_cidades",
+        "action": "ask_cells_cities",
         "parameters": {
             "ibi_cidades": "Barra"
         },

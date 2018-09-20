@@ -2,7 +2,7 @@ import os
 import requests
 import json
 import dialogflow
-from actions import Actions
+from actions.actions import Actions
 
 from flask import Flask, request, jsonify, render_template
 
@@ -12,21 +12,19 @@ app = Flask(__name__)
 @app.route('/', methods=['GET','POST'])
 def webhook():
 
-    req = request.get_json(silent=True, force=True)
-    json_action = req.get('queryResult').get('action')
+    _req = request.get_json(silent=True, force=True)
+    _json_action = _req.get('queryResult').get('action')
+    _json_params = _req.get('queryResult').get('parameters')
+    
+    _action = Actions()
 
-    print('---req %s' % req)
-    print('---json_action %s' % json_action)
+    response = getattr(_action, _json_action)(_json_params)
 
-    action = Actions()
-
-    response = getattr(action, json_action)(req)
-
-    #response =  'success!'
     reply = {
         "fulfillmentText": response,
     }
 
+    # print(_req)
     return jsonify(reply)
 
 

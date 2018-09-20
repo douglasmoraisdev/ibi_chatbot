@@ -1,0 +1,36 @@
+{
+    "responseId": "84e5c53c-bd9b-4611-aa1f-ace89ab9bfc8",
+    "queryResult": {
+        "queryText": "Jardim dos Lagos",
+        "action": "ask_celulas_ask_celulas_cidades",
+        "parameters": {
+            "ibi_bairros": "Jardim dos Lagos",
+            "ibi_cidades": "Guaiba"
+        },
+        "allRequiredParamsPresent": true,
+        "outputContexts": [{
+            "name": "projects/ibi-chatbot-8abd6/agent/sessions/5913a3db-a6ff-222a-8954-69f79689a8f7/contexts/ask_celulas-followup",
+            "lifespanCount": 1,
+            "parameters": {
+                "ibi_cidades": "Guaiba",
+                "date-time.original": "uma",
+                "ibi_celulas": "celula",
+                "ibi_bairros.original": "Jardim dos Lagos",
+                "date-time": "2018-09-21T01: 00: 00-03: 00",
+                "ibi_celulas.original": "célula",
+                "ibi_cidades.original": "Guaíba",
+                "ibi_bairros": "Jardim dos Lagos"
+            }
+        }],
+        "intent": {
+            "name": "projects/ibi-chatbot-8abd6/agent/intents/4ba56d19-3db5-428b-bcef-170bc748878f",
+            "displayName": "ask_celulas - cidades"
+        },
+        "intentDetectionConfidence": 1.0,
+        "languageCode": "pt-br"
+    },
+    "originalDetectIntentRequest": {
+        "payload": {}
+    },
+    "session": "projects/ibi-chatbot-8abd6/agent/sessions/5913a3db-a6ff-222a-8954-69f79689a8f7"
+}

@@ -1,0 +1,38 @@
+{
+    "responseId": "e31e5c40-6ffc-4338-82ba-9be7a35e0d45",
+    "queryResult": {
+        "queryText": "Barra do Ribeiro",
+        "action": "ask_celulas_ask_celulas_cidades",
+        "parameters": {
+            "ibi_cidades": "Barra"
+        },
+        "allRequiredParamsPresent": true,
+        "fulfillmentMessages": [{
+            "text": {
+                "text": [""]
+            }
+        }],
+        "outputContexts": [{
+            "name": "projects/ibi-chatbot-8abd6/agent/sessions/dc35cbd8-31b0-c4d1-16de-5907d0b9b3ae/contexts/ask_celulas-followup",
+            "lifespanCount": 1,
+            "parameters": {
+                "ibi_cidades": "Barra",
+                "date-time.original": "",
+                "ibi_celulas": "",
+                "date-time": "",
+                "ibi_celulas.original": "",
+                "ibi_cidades.original": "Barra do Ribeiro"
+            }
+        }],
+        "intent": {
+            "name": "projects/ibi-chatbot-8abd6/agent/intents/4ba56d19-3db5-428b-bcef-170bc748878f",
+            "displayName": "ask_celulas - cidades"
+        },
+        "intentDetectionConfidence": 1.0,
+        "languageCode": "pt-br"
+    },
+    "originalDetectIntentRequest": {
+        "payload": {}
+    },
+    "session": "projects/ibi-chatbot-8abd6/agent/sessions/dc35cbd8-31b0-c4d1-16de-5907d0b9b3ae"
+}

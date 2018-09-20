@@ -1,0 +1,26 @@
+{
+    "celulas" : {
+        "cidades" : {
+            "guaiba" : {
+                "bairros" : {
+                    "jardim dos lagos" : 
+                        [
+                        "Rua 1, 43",
+                        "Rua 2, 34",
+                        "Avenida 3, 22"
+                        ],
+                    "centro": [
+                        "Rua A, 343",
+                        "Rua B, 344",
+                        "Avenida D, 122"
+                    ],
+                    "ermo": [
+                        "Rua Az, 43",
+                        "Rua Bz, 3",
+                        "Avenida Dz, 12"
+                    ]                    
+                }
+            }
+        }
+    }
+}

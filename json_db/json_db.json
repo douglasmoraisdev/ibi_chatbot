@@ -3,7 +3,7 @@
         "cities" : {
             "guaiba" : {
                 "districts" : {
-                    "jardim dos lagos" : 
+                    "jardim dos lagos" :
                         [
                         "Rua 1, 43",
                         "Rua 2, 34",
@@ -18,7 +18,7 @@
                         "Rua Az, 43",
                         "Rua Bz, 3",
                         "Avenida Dz, 12"
-                    ]                    
+                    ]
                 }
             }
         }

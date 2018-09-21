@@ -19,15 +19,15 @@ class CityUnitTests(unittest.TestCase):
         _cidade = City()
         _resp = _cidade.barra('Centro')
 
-        self.assertEqual(_resp, "Ask Barra")
+        self.assertIn("fulfillmentMessages", _resp)
 
-    def test_barra(self):
+    def test_guaiba(self):
         """Test a ask about guaiba cells"""
 
         _cidade = City()
         _resp = _cidade.guaiba('Centro')
 
-        self.assertIn("O endereço das células em Guaíba", _resp)
+        self.assertIn("O endereço das células em Guaíba", str(_resp))
 
 
 if __name__ == '__main__':

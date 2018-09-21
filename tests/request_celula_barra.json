@@ -4,7 +4,8 @@
         "queryText": "Barra do Ribeiro",
         "action": "ask_cells_cities",
         "parameters": {
-            "ibi_cidades": "Barra"
+            "ibi_districts": "Centro",                        
+            "ibi_cities": "Barra"
         },
         "allRequiredParamsPresent": true,
         "fulfillmentMessages": [{
@@ -16,12 +17,14 @@
             "name": "projects/ibi-chatbot-8abd6/agent/sessions/dc35cbd8-31b0-c4d1-16de-5907d0b9b3ae/contexts/ask_celulas-followup",
             "lifespanCount": 1,
             "parameters": {
-                "ibi_cidades": "Barra",
+                "ibi_cities": "Barra",
                 "date-time.original": "",
                 "ibi_celulas": "",
                 "date-time": "",
                 "ibi_celulas.original": "",
-                "ibi_cidades.original": "Barra do Ribeiro"
+                "ibi_cities.original": "Barra do Ribeiro",
+                "ibi_districts": "Centro",
+                "ibi_districts.original": "centro"            
             }
         }],
         "intent": {

@@ -3,7 +3,7 @@ import unittest
 import json
 
 
-class CityCellsTest(unittest.TestCase):
+class CityCellsIntegrationTest(unittest.TestCase):
     """
     Test integration in ask Cells location dialogs
     """
@@ -27,6 +27,7 @@ class CityCellsTest(unittest.TestCase):
                                content_type='application/json')
 
         self.assertEqual(result.status_code, 200)
+        self.assertIn('richResponse', str(result.data))
 
     def test_post_guaiba_bairros(self):
         """Test a ask about guaiba cells"""

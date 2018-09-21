@@ -14,6 +14,7 @@ def webhook():
     """Main entry endpoint of the webhook"""
 
     _req = request.get_json(silent=True, force=True)
+    print(_req)
     _json_action = _req.get('queryResult').get('action')
     _json_params = _req.get('queryResult').get('parameters')
 
@@ -21,12 +22,18 @@ def webhook():
 
     response = getattr(_action, _json_action)(_json_params)
 
+    print(response)
+
+    return jsonify(response)
+
+    '''
     reply = {
         "fulfillmentText": response,
     }
 
     # print(_req)
     return jsonify(reply)
+    '''
 
 
 # run Flask app

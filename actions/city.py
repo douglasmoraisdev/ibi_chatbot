@@ -9,12 +9,13 @@ class City(object):
             self._db = json.loads(_json_db.read())
 
     def barra(self, district):
-        return 'Ask Barra'
+        with open('rich_list_example.json') as _rich_json:
+            return json.loads(_rich_json.read())
 
     def guaiba(self, district):
         _cells_address = self._db.get('cells').get('cities')\
                            .get('guaiba').get('districts')\
-                           .get('jardim dos lagos')
+                           .get(district.lower())
 
         _address_str = "O endereço das células em Guaíba, %s são: " % district
         _address_list = ""
@@ -23,7 +24,7 @@ class City(object):
 
         _address_str = "%s %s" % (_address_str, _address_list)
 
-        return _address_str
+        return {"fulfillmentText": _address_str}
 
     def eldorado(self, district):
 

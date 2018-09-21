@@ -4,22 +4,22 @@
         "queryText": "Jardim dos Lagos",
         "action": "ask_cells_cities",
         "parameters": {
-            "ibi_bairros": "Jardim dos Lagos",
-            "ibi_cidades": "Guaiba"
+            "ibi_districts": "Jardim dos Lagos",
+            "ibi_cities": "Guaiba"
         },
         "allRequiredParamsPresent": true,
         "outputContexts": [{
             "name": "projects/ibi-chatbot-8abd6/agent/sessions/5913a3db-a6ff-222a-8954-69f79689a8f7/contexts/ask_celulas-followup",
             "lifespanCount": 1,
             "parameters": {
-                "ibi_cidades": "Guaiba",
+                "ibi_cities": "Guaiba",
                 "date-time.original": "uma",
                 "ibi_celulas": "celula",
-                "ibi_bairros.original": "Jardim dos Lagos",
+                "ibi_districts.original": "Jardim dos Lagos",
                 "date-time": "2018-09-21T01: 00: 00-03: 00",
                 "ibi_celulas.original": "célula",
-                "ibi_cidades.original": "Guaíba",
-                "ibi_bairros": "Jardim dos Lagos"
+                "ibi_cities.original": "Guaíba",
+                "ibi_districts": "Jardim dos Lagos"
             }
         }],
         "intent": {

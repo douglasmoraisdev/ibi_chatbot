@@ -1,0 +1,85 @@
+{
+    'responseId': 'a53ae44d-5285-48bd-813c-e3ec04ca6c53',
+    'queryResult': {
+        'queryText': 'FACEBOOK_LOCATION',
+        'action': 'ask_cells_cities_select_address.ask_cells-cities-selectaddress-fallback',
+        'parameters': {},
+        'allRequiredParamsPresent': True,
+        'fulfillmentMessages': [{
+            'text': {
+                'text': ['']
+            }
+        }],
+        'outputContexts': [{
+            'name': 'projects/ibi-chatbot-8abd6/agent/sessions/ebc9b46e-3f94-4ecc-bd5f-87c3278e7105/contexts/facebook_location',
+            'parameters': {
+                'lat': -30.028910950387,
+                'long': -51.207757678566
+            }
+        }, {
+            'name': 'projects/ibi-chatbot-8abd6/agent/sessions/ebc9b46e-3f94-4ecc-bd5f-87c3278e7105/contexts/ask_cells-cities-selectnumber-followup',
+            'lifespanCount': 1,
+            'parameters': {
+                'number': [1.0],
+                'number.original': '1'
+            }
+        }, {
+            'name': 'projects/ibi-chatbot-8abd6/agent/sessions/ebc9b46e-3f94-4ecc-bd5f-87c3278e7105/contexts/ask_cells-cities-followup',
+            'parameters': {
+                'number': [1.0],
+                'ibi_cities': 'Barra',
+                'ibi_districts.original': 'centro',
+                'number.original': '1',
+                'ibi_cities.original': 'Barra,',
+                'ibi_districts': 'Centro'
+            }
+        }, {
+            'name': 'projects/ibi-chatbot-8abd6/agent/sessions/ebc9b46e-3f94-4ecc-bd5f-87c3278e7105/contexts/ask_cells-cities-selectaddress-followup',
+            'lifespanCount': 1,
+            'parameters': {
+                'number': [1.0],
+                'number.original': '1'
+            }
+        }, {
+            'name': 'projects/ibi-chatbot-8abd6/agent/sessions/ebc9b46e-3f94-4ecc-bd5f-87c3278e7105/contexts/generic',
+            'lifespanCount': 4,
+            'parameters': {
+                'ibi_cells.original': 'célula',
+                'ibi_cells': 'celula',
+                'number': [1.0],
+                'ibi_cities': 'Barra',
+                'ibi_districts.original': 'centro',
+                'number.original': '1',
+                'ibi_cities.original': 'Barra,',
+                'facebook_sender_id': '1404289339684516',
+                'ibi_districts': 'Centro'
+            }
+        }],
+        'intent': {
+            'name': 'projects/ibi-chatbot-8abd6/agent/intents/f1de5242-e2d4-4fad-9d3b-335b91a56eef',
+            'displayName': 'ask_cells - cities - select.address - fallback',
+            'isFallback': True
+        },
+        'intentDetectionConfidence': 1.0,
+        'languageCode': 'pt-br'
+    },
+    'originalDetectIntentRequest': {
+        'source': 'facebook',
+        'payload': {
+            'data': {
+                'postback': {
+                    'data': {
+                        'lat': -30.028910950387,
+                        'long': -51.207757678566
+                    },
+                    'payload': 'FACEBOOK_LOCATION'
+                },
+                'sender': {
+                    'id': '1404289339684516'
+                }
+            },
+            'source': 'facebook'
+        }
+    },
+    'session': 'projects/ibi-chatbot-8abd6/agent/sessions/ebc9b46e-3f94-4ecc-bd5f-87c3278e7105'
+}

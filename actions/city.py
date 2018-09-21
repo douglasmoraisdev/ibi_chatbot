@@ -9,7 +9,7 @@ class City(object):
             self._db = json.loads(_json_db.read())
 
     def barra(self, district):
-        with open('rich_list_example.json') as _rich_json:
+        with open('rich_location_example.json') as _rich_json:
             return json.loads(_rich_json.read())
 
     def guaiba(self, district):

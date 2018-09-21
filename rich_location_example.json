@@ -1,0 +1,85 @@
+{
+    "fulfillmentMessages": 
+    [
+        {
+            "payload": {
+                "facebook": {
+                    "attachment":{
+                        "type":"template",
+                        "payload": {
+                            "template_type":"generic",
+                            "elements":[
+                               {
+                                "title":"Celula Barra Centro I - Rua 8, nro 1220",
+                                "image_url":"https://maps.googleapis.com/maps/api/staticmap?markers=color:red|label:B|-30.028910950387,-51.207757678566&size=360x360&zoom=13",
+                                "subtitle":"Clique para abrir no mapa",
+                                "default_action": {
+                                  "type": "web_url",
+                                  "url": "https://maps.google.com/?q=R.+Oito%2C+122+-+Centro%2C+Eldorado+do+Sul+-+RS%2C+92990-000&ftid=0x95197da78338c483:0x989d764b798a5eef&hl=pt&gl=br",
+                                  "messenger_extensions": false,
+                                  "webview_height_ratio": "tall"
+                                },
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "Escolher outra celula?",
+                                        "payload":"1"
+                                    }
+                                ]                                
+
+                            }
+                            ]
+                          }
+                      }
+                },
+
+                "google": {
+                    "expectUserResponse": true,
+                    "richResponse": {
+                        "items": [
+                            {
+                                "simpleResponse": {
+                                    "textToSpeech": "Choose a item"
+                                }
+                            }
+                        ]
+                    },
+                    "systemIntent": {
+                        "intent": "actions.intent.OPTION",
+                        "data": {
+                            "@type": "type.googleapis.com/google.actions.v2.OptionValueSpec",
+                            "listSelect": {
+                                "title": "Hello",
+                                "items": [
+                                    {
+                                        "optionInfo": {
+                                            "key": "first title key"
+                                        },
+                                        "description": "first description",
+                                        "image": {
+                                            "url": "https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
+                                            "accessibilityText": "first alt"
+                                        },
+                                        "title": "first title"
+                                    },
+                                    {
+                                        "optionInfo": {
+                                            "key": "second"
+                                        },
+                                        "description": "second description",
+                                        "image": {
+                                            "url": "https://lh3.googleusercontent.com/Nu3a6F80WfixUqf_ec_vgXy_c0-0r4VLJRXjVFF_X_CIilEu8B9fT35qyTEj_PEsKw",
+                                            "accessibilityText": "second alt"
+                                        },
+                                        "title": "second title"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }                
+
+            }
+        }
+    ]
+}

@@ -14,9 +14,9 @@ app = Flask(__name__)
 def webhook():
     """Main entry endpoint of the webhook"""
 
-    app.logger.info('logged in successfully')
-
     _req = request.get_json(silent=True, force=True)
+    app.logger.info('Request received: %s' % _req)
+
     _json_action = _req.get('queryResult').get('action')
     _json_params = _req.get('queryResult').get('parameters')
 
@@ -24,6 +24,7 @@ def webhook():
 
     response = getattr(_action, _json_action)(_json_params)
 
+    app.logger.info('Response send: %s' % response)
     return jsonify(response)
 
     '''

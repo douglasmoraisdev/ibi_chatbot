@@ -7,11 +7,7 @@ class FbRichMsgUnitTests(unittest.TestCase):
     """Unit test City Class"""
 
     def setUp(self):
-        with open('tests/request_celula_barra.json') as _json_data:
-            self.barra_payload = json.loads(_json_data.read())
-
-        with open('tests/request_celula_guaiba_bairros.json') as _json_data:
-            self.guaiba_payload = json.loads(_json_data.read())
+        pass
 
     def test_button_list(self):
         """Test a Facebook Button List message"""

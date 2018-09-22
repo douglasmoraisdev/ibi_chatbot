@@ -19,9 +19,14 @@ class FbRichMsgUnitTests(unittest.TestCase):
         _fb_rich = FacebookRichMessages()
 
         _title = "Algum Titulo"
-        _button_list = [dict(type="postback",
-                             title="1 - Rua Abacate, 123 bl P",
-                             postback="1")]
+        _button_list = []
+
+        _button_list.append(dict(type="postback",
+                                 title="1 - Rua Abacate, 123 bl P",
+                                 postback="1"))        
+        _button_list.append(dict(type="postback",
+                                 title="2 - Av. Maça, 99 fundos",
+                                 postback="2"))
 
         _button_message = _fb_rich.button_list(_title, _button_list)
 
@@ -30,6 +35,7 @@ class FbRichMsgUnitTests(unittest.TestCase):
         self.assertIn("template_type", str(_button_message))
         self.assertIn("Titulo", str(_button_message))
         self.assertIn("1 - Rua Abacate, 123 bl P", str(_button_message))
+        self.assertIn("2 - Av. Maça, 99 fundos", str(_button_message))
 
 if __name__ == '__main__':
     unittest.main()

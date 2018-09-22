@@ -1,19 +1,21 @@
 import json
 
+from rich_messages.facebook_rich_messages import FacebookRichMessages
+
 
 class City(object):
     """Handle the ask_cells_ask_cells_cidades responses"""
 
     def __init__(self):
         with open('json_db/json_db.json') as _json_db:
-            self._db = json.loads(_json_db.read())
+            self.db = json.loads(_json_db.read())
 
     def barra(self, district):
         with open('rich_location_example.json') as _rich_json:
             return json.loads(_rich_json.read())
 
     def guaiba(self, district):
-        _cells_address = self._db.get('cells').get('cities')\
+        _cells_address = self.db.get('cells').get('cities')\
                            .get('guaiba').get('districts')\
                            .get(district.lower())
 

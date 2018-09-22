@@ -27,7 +27,7 @@ class CityCellsIntegrationTest(unittest.TestCase):
                                content_type='application/json')
 
         self.assertEqual(result.status_code, 200)
-        self.assertIn('richResponse', str(result.data))
+        self.assertIn('messenger_extensions', str(result.data))
 
     def test_post_guaiba_bairros(self):
         """Test a ask about guaiba cells"""

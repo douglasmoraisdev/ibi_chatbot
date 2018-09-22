@@ -1,0 +1,18 @@
+{
+    "facebook": {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "button",
+                "text": "<LIST TITLE>",
+                "buttons": [
+                    {
+                        "type": "postback",
+                        "title": "<BUTTON TITLE>",
+                        "payload":"1"
+                    }
+                ]
+            }
+        }
+    }
+}

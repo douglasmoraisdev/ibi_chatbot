@@ -1,10 +1,11 @@
 import os
 import requests
 import json
-import dialogflow
-from actions.actions import Actions
 
 from flask import Flask, request, jsonify, render_template
+
+from actions.actions import Actions
+import config.logconfig
 
 app = Flask(__name__)
 
@@ -12,6 +13,8 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def webhook():
     """Main entry endpoint of the webhook"""
+
+    app.logger.info('logged in successfully')
 
     _req = request.get_json(silent=True, force=True)
     _json_action = _req.get('queryResult').get('action')

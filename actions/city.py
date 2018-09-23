@@ -1,7 +1,13 @@
 import json
 
+from flask import Flask
+
 from rich_messages.facebook_rich_messages import FacebookRichMessages
+from rich_messages.google_rich_messages import GoogleRichMessages
 from rich_messages.fulfillment_payload import FulfillmentPayload
+import config.logconfig
+
+app = Flask(__name__)
 
 
 class City(object):
@@ -25,6 +31,7 @@ class City(object):
 
         # objects for rich responses
         _fb_rich = FacebookRichMessages()
+        _google_rich = GoogleRichMessages()
 
         # query cells address by district
         _cells_address = self.db.get('cells').get('cities')\
@@ -44,8 +51,10 @@ class City(object):
 
         # generate facebook rich list
         _facebook_message = _fb_rich.button_list(_list_title, _button_list)
+        _google_message = _google_rich.button_list(_list_title, _button_list)
 
         _message = _fulfill.append('facebook', _facebook_message)
+        _message = _fulfill.append('google', _google_message)
 
         return _message
 

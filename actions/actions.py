@@ -9,6 +9,7 @@ class Actions(object):
         return 'Hello response'
 
     def ask_cells_cities(self, params):
+        """Return the list of Cell addresses by city and district"""
 
         _action_class = City()
 
@@ -21,6 +22,7 @@ class Actions(object):
             return getattr(_action_class, 'guaiba')('centro')
 
     def ask_cells_cities_select_address(self, params):
+        """NOT IN USE"""
 
         _action_class = City()
 
@@ -33,6 +35,7 @@ class Actions(object):
             return getattr(_action_class, 'guaiba')('centro')
 
     def ask_cells_cities_show_route(self, params):
+        """NOT IN USE"""
 
         _action_class = City()
 

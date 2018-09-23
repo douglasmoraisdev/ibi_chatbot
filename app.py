@@ -27,15 +27,6 @@ def webhook():
     app.logger.info('Response send: %s' % response)
     return jsonify(response)
 
-    '''
-    reply = {
-        "fulfillmentText": response,
-    }
-
-    # print(_req)
-    return jsonify(reply)
-    '''
-
 
 # run Flask app
 if __name__ == "__main__":

@@ -1,0 +1,14 @@
+{
+    "google": {
+        "expectUserResponse": true,
+        "richResponse": {
+            "items": [
+                {
+                    "simpleResponse": {
+                        "textToSpeech": "Essas são as opções disponíveis"
+                    }
+                }
+            ]
+        }
+    }
+}

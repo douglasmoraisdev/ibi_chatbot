@@ -27,8 +27,10 @@ class CityUnitTests(unittest.TestCase):
         _cidade = City()
         _resp = _cidade.guaiba('Centro')
 
-        self.assertIn("O endereço das células em Guaíba", str(_resp))
+        self.assertIn("Os endereços das células em Guaíba", str(_resp))
         self.assertIn("Centro", str(_resp))
+        self.assertIn("facebook", str(_resp))
+        self.assertIn("google", str(_resp))
 
 
 if __name__ == '__main__':

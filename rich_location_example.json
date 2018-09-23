@@ -39,7 +39,7 @@
                         "items": [
                             {
                                 "simpleResponse": {
-                                    "textToSpeech": "Choose a item"
+                                    "textToSpeech": "Essas são as opções:"
                                 }
                             }
                         ]

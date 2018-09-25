@@ -39,19 +39,27 @@ class City(object):
             .get(district.lower())
 
         # Iter cell address for facebook payload
-        _button_list = []
-        for _address in _cells_address:
-            _button_list.append(dict(
+        _button_list_facebook = []
+        for i, _address in enumerate(_cells_address):
+            _button_list_facebook.append(dict(
                 type="postback",
-                title=_address,
-                payload="1"
+                title=_address["label"],
+                payload=str(i+1),
+            ))
+            
+        # Iter cell address for google payload
+        _button_list_google = []
+        for i,_address in enumerate(_cells_address):
+            _button_list_google.append(dict(
+                title=_address["label"],
+                optionInfo=dict(key="escolho o numero %s" % str(i+1))
             ))
 
         _list_title = "Os endereços das células em Guaíba, %s são: " % district
 
         # generate facebook rich list
-        _facebook_message = _fb_rich.button_list(_list_title, _button_list)
-        _google_message = _google_rich.button_list(_list_title, _button_list)
+        _facebook_message = _fb_rich.button_list(_list_title, _button_list_facebook)
+        _google_message = _google_rich.button_list(_list_title, _button_list_google)
 
         _message = _fulfill.append('facebook', _facebook_message)
         _message = _fulfill.append('google', _google_message)

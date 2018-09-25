@@ -27,15 +27,15 @@ class GoogleRichMessages():
             _button_list = json.loads(_json_fb_list.read())
 
         # Render the Title
-        '''
+
         _button_list["google"][
-            "attachment"][
-            "payload"]["text"] = title
+            "richResponse"][
+            "items"][0]["simpleResponse"]["textToSpeech"] = title
 
         # Render the buttons list
         _button_list["google"][
-            "attachment"][
-            "payload"]["buttons"] = options
-        '''
+            "systemIntent"][
+            "data"]["listSelect"]["items"] = options
+
 
         return _button_list

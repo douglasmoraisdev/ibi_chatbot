@@ -25,12 +25,13 @@ class CityUnitTests(unittest.TestCase):
         """Test a ask about guaiba cells"""
 
         _cidade = City()
-        _resp = _cidade.guaiba('Centro')
+        _resp = _cidade.guaiba('Jardim dos Lagos')
 
         self.assertIn("Os endereços das células em Guaíba", str(_resp))
-        self.assertIn("Centro", str(_resp))
+        self.assertIn("Jardim", str(_resp))
         self.assertIn("facebook", str(_resp))
         self.assertIn("google", str(_resp))
+        self.assertIn("Maica", str(_resp))
 
 
 if __name__ == '__main__':

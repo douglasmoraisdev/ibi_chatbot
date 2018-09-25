@@ -5,9 +5,27 @@
                 "districts" : {
                     "jardim dos lagos" :
                         [
-                        "Rua 1, 43",
-                        "Rua 2, 34",
-                        "Avenida 3, 22"
+                            {
+                                "label" : "Rua Cenair Maica, 440",
+                                "coord_x" : "-30.112949",
+                                "coord_y" : "-51.3707225",
+                                "cep": "92500000",
+                                "complete_address" : "Rua Cenair Maica, 440 - Jardim dos Lagos, Guaiba - RS, Brasil"
+                            },
+                            {
+                                "label" : "Av. Santa Clara, 120",
+                                "coord_x" : "-30.1140081",
+                                "coord_y" : "-51.3630711",
+                                "cep": "92500000",
+                                "complete_address" : "Av. Santa Clara, 120 - Jardim dos Lagos, Guaiba - RS, Brasil"
+                            },
+                            {
+                                "label" : "Rua Bolivar, 30",
+                                "coord_x" : "-30.1180434",
+                                "coord_y" : "-51.346015,17",
+                                "cep": "92500000",
+                                "complete_address" : "Rua Bolivar, 30 - Jardim dos Lagos, Guaiba - RS, Brasil"
+                            }
                         ],
                     "centro": [
                         "Rua A, 343",

@@ -1,14 +1,15 @@
-from .city import City
+from flask import Flask
 
+from .city import City
+from .address import Address
+import config.logconfig
+
+app = Flask(__name__)
 
 class Actions(object):
     """Handle the intents resposes by action names """
 
-    def ac_hello(self, request):
-
-        return 'Hello response'
-
-    def ask_cells_cities(self, params):
+    def ask_cells_cities(self, params, outputContexts):
         """Return the list of Cell addresses by city and district"""
 
         _action_class = City()
@@ -21,28 +22,15 @@ class Actions(object):
         else:
             return getattr(_action_class, 'guaiba')('centro')
 
-    def ask_cells_cities_select_address(self, params):
-        """NOT IN USE"""
+    def ask_cells_cities_select_address(self, params, outputContexts):
+        """Return the map link for the selected address"""
 
-        _action_class = City()
+        _address = Address()
 
-        if ('ibi_cities' in params) and ('ibi_districts' in params):
-            _city = params['ibi_cities'].lower()
-            _district = params['ibi_districts']
+        app.logger.info('params %s' % params)
+        app.logger.info('outputContexts %s' % outputContexts)
 
-            return getattr(_action_class, _city)(_district)
-        else:
-            return getattr(_action_class, 'guaiba')('centro')
+        _address_info = _address.google_maps_from_address(params, outputContexts)
 
-    def ask_cells_cities_show_route(self, params):
-        """NOT IN USE"""
-
-        _action_class = City()
-
-        if ('ibi_cities' in params) and ('ibi_districts' in params):
-            _city = params['ibi_cities'].lower()
-            _district = params['ibi_districts']
-
-            return getattr(_action_class, _city)(_district)
-        else:
-            return getattr(_action_class, 'guaiba')('centro')
+        return _address_info
+    

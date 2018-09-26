@@ -3,7 +3,6 @@ import json
 from flask import Flask
 from flask import current_app as app
 
-
 from rich_messages.facebook_rich_messages import FacebookRichMessages
 from rich_messages.google_rich_messages import GoogleRichMessages
 from rich_messages.fulfillment_payload import FulfillmentPayload
@@ -13,8 +12,7 @@ class City(object):
     """Handle the ask_cells_ask_cells_cidades responses"""
 
     def __init__(self):
-        with open('json_db/json_db.json') as _json_db:
-            self.db = json.loads(_json_db.read())
+        pass
 
     def barra(self, district):
         """Return Barra Cells by the given district"""
@@ -25,10 +23,6 @@ class City(object):
     def guaiba(self, district):
         """Return Guaiba City Cells by the given district"""
 
-        # test_db = app.db.test.find_one({"_id" : ObjectId("5bab9799722cb23eb655d421")})
-
-        # app.logger.info('test_db %s' % test_db)
-
         # response object
         _fulfill = FulfillmentPayload()
 
@@ -37,27 +31,26 @@ class City(object):
         _google_rich = GoogleRichMessages()
 
         # query cells address by district
-        _cells_address = self.db.get('cells').get('cities')\
-            .get('guaiba').get('districts')\
-            .get(district.lower())
+        query_address = {"city" : "guaiba",
+                         "district": district.lower()}
+        # do the query
+        _cells_address = app.db.cells.find(query_address)
 
-        # Iter cell address for facebook payload
+        # Iter cell address for facebook ang google payload
         _button_list_facebook = []
+        _button_list_google = []
         for i, _address in enumerate(_cells_address):
             _button_list_facebook.append(dict(
                 type="postback",
                 title=_address["label"],
                 payload=str(i+1),
             ))
-            
-        # Iter cell address for google payload
-        _button_list_google = []
-        for i,_address in enumerate(_cells_address):
+
             _button_list_google.append(dict(
                 title=_address["label"],
                 optionInfo=dict(key="escolho o numero %s" % str(i+1))
-            ))
-
+            ))            
+            
         _list_title = "Os endereços das células em Guaíba, %s são: " % district
 
         # generate facebook rich list

@@ -20,18 +20,9 @@ app.db = mongo.db
 def webhook():
     """Main entry endpoint of the webhook"""
 
-    '''
-    # Test a find on mongo database
-
-    test_db = app.db.test.find_one({"_id" : ObjectId("5bab9799722cb23eb655d421")})
-    app.logger.info('test_db: %s' % test_db['name'])
-    '''
-
     # format the request in json format
     _req = request.get_json(silent=True, force=True)
     app.logger.info('Request received: %s' % _req)
-
-
 
     # get action and input parameters
     _json_action = _req.get('queryResult').get('action')
@@ -43,10 +34,24 @@ def webhook():
     else:
         _json_outputContexts = None
 
+    # get originalDetectIntentRequest parameters(followup) if exists
+    if 'originalDetectIntentRequest' in _req:
+        _json_IntentRequest = _req.get('originalDetectIntentRequest')
+        if 'payload' in _json_IntentRequest:
+            _json_IntentRequest =_json_IntentRequest.get('payload')\
+                                                    .get('data')\
+                                                    .get('postback')
+    else:
+        _json_IntentRequest = None
+
+
     _action = Actions()
 
     # make the response
-    response = getattr(_action, _json_action)(_json_params, _json_outputContexts)
+    response = getattr(_action, _json_action)(_json_params,
+                                              _json_outputContexts,
+                                              _json_IntentRequest
+                                              )
 
     app.logger.info('Response send: %s' % response)
     return jsonify(response)

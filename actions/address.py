@@ -34,7 +34,7 @@ class Address(object):
         return _google_url.replace(' ', '+')
 
 
-    def google_maps_from_address(self, params, outputContexts):
+    def google_maps_from_address(self, params, outputContexts, IntentRequest):
         """Return google maps image_url and url from a give address"""
 
         _google_maps_info=dict()
@@ -44,14 +44,23 @@ class Address(object):
 
         # objects for rich responses
         _fb_rich = FacebookRichMessages()        
+
+        app.logger.info('IntentRequest %s' % IntentRequest)
         
         address_index = params['number'][0]
         district_name = outputContexts[0]['parameters']['ibi_districts'].lower()
+        address_name = IntentRequest['title']
 
         # query for the address info
-        _address_info = self.db.get('cells').get('cities')\
-            .get('guaiba').get('districts')\
-            .get(district_name)[int(float(address_index))-1]
+        query_address_info = {"city" : "guaiba",
+                              "district": district_name,
+                              "label" : address_name
+                              }
+        # do the query
+        _address_info = app.db.cells.find_one(query_address_info)
+
+        app.logger.info('query_address_info %s' % query_address_info)
+        app.logger.info('_cells_address %s' % _address_info)
 
         # get the google maps static image url
         _google_maps_img_url = self.generate_image_url_google_maps(
@@ -74,6 +83,5 @@ class Address(object):
 
         _message = _fulfill.append('facebook', _facebook_message)
 
-        app.logger.info('_google_maps_info %s' % _message)
 
         return _message

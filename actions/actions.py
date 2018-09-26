@@ -10,7 +10,7 @@ from .address import Address
 class Actions(object):
     """Handle the intents resposes by action names """
 
-    def ask_cells_cities(self, params, outputContexts):
+    def ask_cells_cities(self, params, outputContexts, IntentRequest):
         """Return the list of Cell addresses by city and district"""
        
         _action_class = City()
@@ -23,7 +23,8 @@ class Actions(object):
         else:
             return getattr(_action_class, 'guaiba')('centro')
 
-    def ask_cells_cities_select_address(self, params, outputContexts):
+    def ask_cells_cities_select_address(self, params,
+                                         outputContexts, IntentRequest):
         """Return the map link for the selected address"""
 
         _address = Address()
@@ -31,6 +32,8 @@ class Actions(object):
         app.logger.info('params %s' % params)
         app.logger.info('outputContexts %s' % outputContexts)
 
-        _address_info = _address.google_maps_from_address(params, outputContexts)
+        _address_info = _address.google_maps_from_address(params,
+                                                          outputContexts,
+                                                          IntentRequest)
 
         return _address_info

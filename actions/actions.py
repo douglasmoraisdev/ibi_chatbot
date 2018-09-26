@@ -1,17 +1,18 @@
+from bson.objectid import ObjectId
+
 from flask import Flask
+from flask import current_app as app
 
 from .city import City
 from .address import Address
-import config.logconfig
 
-app = Flask(__name__)
 
 class Actions(object):
     """Handle the intents resposes by action names """
 
     def ask_cells_cities(self, params, outputContexts):
         """Return the list of Cell addresses by city and district"""
-
+       
         _action_class = City()
 
         if ('ibi_cities' in params) and ('ibi_districts' in params):
@@ -33,4 +34,3 @@ class Actions(object):
         _address_info = _address.google_maps_from_address(params, outputContexts)
 
         return _address_info
-    

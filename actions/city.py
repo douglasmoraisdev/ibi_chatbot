@@ -1,13 +1,12 @@
 import json
 
 from flask import Flask
+from flask import current_app as app
+
 
 from rich_messages.facebook_rich_messages import FacebookRichMessages
 from rich_messages.google_rich_messages import GoogleRichMessages
 from rich_messages.fulfillment_payload import FulfillmentPayload
-import config.logconfig
-
-app = Flask(__name__)
 
 
 class City(object):
@@ -25,6 +24,10 @@ class City(object):
 
     def guaiba(self, district):
         """Return Guaiba City Cells by the given district"""
+
+        # test_db = app.db.test.find_one({"_id" : ObjectId("5bab9799722cb23eb655d421")})
+
+        # app.logger.info('test_db %s' % test_db)
 
         # response object
         _fulfill = FulfillmentPayload()

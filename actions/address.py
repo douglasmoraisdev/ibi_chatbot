@@ -1,13 +1,11 @@
 import json
 
 from flask import Flask
+from flask import current_app as app
 
 from rich_messages.facebook_rich_messages import FacebookRichMessages
 from rich_messages.google_rich_messages import GoogleRichMessages
 from rich_messages.fulfillment_payload import FulfillmentPayload
-import config.logconfig
-
-app = Flask(__name__)
 
 
 class Address(object):
